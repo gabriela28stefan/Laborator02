@@ -159,6 +159,20 @@ public class LifecycleMonitorActivity extends Activity {
     }
     
     protected void onRestoreInstanceState(Bundle savedInstanceState){
+    	super.onRestoreInstanceState(savedInstanceState);
+    	if(savedInstanceState.containsKey(Constants.USERNAME_EDIT_TEXT)){
+    		EditText username = (EditText) findViewById(R.id.username_edit_text);
+    		username.setText(savedInstanceState.getString(Constants.USERNAME_EDIT_TEXT));
+    	}
     	
+    	if(savedInstanceState.containsKey(Constants.PASSWORD_EDIT_TEXT)){
+    		EditText password = (EditText) findViewById(R.id.password_edit_text);
+    		password.setText(savedInstanceState.getString(Constants.PASSWORD_EDIT_TEXT));
+    	}
+    	
+    	if(savedInstanceState.containsKey(Constants.REMEMBER_ME_CHECKBOX)){
+    		EditText checkbox = (EditText) findViewById(R.id.remember_me_checkbox);
+    		checkbox.setText(savedInstanceState.getString(Constants.REMEMBER_ME_CHECKBOX));
+    	}
     }
 }
